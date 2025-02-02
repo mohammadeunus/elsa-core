@@ -5,11 +5,9 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <Description>
-            Elsa is a set of workflow libraries and tools that enable lean and mean workflowing capabilities in any .NET Core application.
-            This package provides a Liquid expression evaluator based on Fluid.
-        </Description>
-        <PackageTags>elsa, workflows, liquid</PackageTags>
+        <PackageId>WelcomeStation.Elsa.Scripting.Liquid</PackageId>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>2.15.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
