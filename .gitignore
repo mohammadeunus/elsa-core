@@ -40,9 +40,7 @@ packages/
 
 #Rider
 .idea
-
-#macos
-.DS_Store
+.run
 
 #wwwroot
 wwwroot/
@@ -53,23 +51,28 @@ node_modules/
 .stylelintrc.yml
 .eslintrc.yml
 
-#github
-.github/
-
 #volatile
 App_Data/
 *.db
+*.db-journal
 *.db-shm
 *.db-wal
+.DS_Store
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
 # Elsa Stencil Components
-src/designer/elsa-workflows-studio/dist
-src/designer/elsa-workflows-studio/www
-src/designer/elsa-workflows-studio/loader
+src/designer/elsa-workflows-designer/dist
+src/designer/elsa-workflows-designer/www
+src/designer/elsa-workflows-designer/loader
 
 # Created by developers using GNU/Linux
 .directory
-launchSettings.json
+
+src/modules/Elsa.Workflows.Designer/package-lock.json
+
+unlist.sh
+
+# build artifacts
+/artifacts
