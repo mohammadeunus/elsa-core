@@ -4,10 +4,11 @@
     <Import Project="..\..\..\..\configureawait.props" />
 
     <PropertyGroup>
-        <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
-        <PackageId>WafiElsa.Persistence.EntityFramework.SqlServer</PackageId>
+        <TargetFrameworks>net8.0;net9.0</TargetFrameworks> 
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Version>9.0.3</Version>
+        <PackageId>WelcomeStation.Elsa.Persistence.EntityFramework.SqlServer</PackageId>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>2.15.0</Version>
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0'">
@@ -29,9 +30,9 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
     </ItemGroup>
-
+ 
     <ItemGroup>
-        <PackageReference Include="WafiElsa.Persistence.EntityFramework.Core" Version="9.0.3" />
+      <ProjectReference Include="..\Elsa.Persistence.EntityFramework.Core\Elsa.Persistence.EntityFramework.Core.csproj" />
     </ItemGroup>
 
 </Project>
