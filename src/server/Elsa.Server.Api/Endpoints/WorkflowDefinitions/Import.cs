@@ -14,7 +14,7 @@ namespace Elsa.Server.Api.Endpoints.WorkflowDefinitions
     [ApiVersion("1")]
     [Route("v{apiVersion:apiVersion}/workflow-definitions/{workflowDefinitionId}/import")]
     [Produces("application/json")]
-    public class Import : Controller
+    public partial class Import : Controller
     {
         private readonly IWorkflowPublisher _workflowPublisher;
         private readonly IContentSerializer _contentSerializer;
@@ -33,13 +33,13 @@ namespace Elsa.Server.Api.Endpoints.WorkflowDefinitions
             Description = "Imports a JSON file into the specified workflow definition.",
             OperationId = "WorkflowDefinitions.Import",
             Tags = new[] { "WorkflowDefinitions" })
-        ]
-        public async Task<IActionResult> Handle(string workflowDefinitionId, [FromForm] IFormFile? file, CancellationToken cancellationToken)
+         ]
+        public async Task<IActionResult> Handle(string workflowDefinitionId, [FromForm] ImportWorkflowDefinitionRequest request, CancellationToken cancellationToken)
         {
-            if (file == null)
+            if (request.File == null)
                 return BadRequest();
 
-            var json = await file.OpenReadStream().ReadStringToEndAsync(cancellationToken);
+            var json = await request.File.OpenReadStream().ReadStringToEndAsync(cancellationToken);
             var workflowDefinition = await _workflowPublisher.GetDraftAsync(workflowDefinitionId, cancellationToken) ?? _workflowPublisher.New();
             var postedModel = _contentSerializer.Deserialize<WorkflowDefinition>(json);
 
@@ -61,5 +61,6 @@ namespace Elsa.Server.Api.Endpoints.WorkflowDefinitions
             await _workflowPublisher.SaveDraftAsync(workflowDefinition, cancellationToken);
             return Json(workflowDefinition, SerializationHelper.GetSettingsForWorkflowDefinition());
         }
+
     }
 }
