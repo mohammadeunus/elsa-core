@@ -5,7 +5,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <PackageId>WelcomeStation.Elsa.Abstractions</PackageId>
+        <PackageId>Elsa.Abp.Abstractions</PackageId>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Version>2.15.0</Version>
     </PropertyGroup>

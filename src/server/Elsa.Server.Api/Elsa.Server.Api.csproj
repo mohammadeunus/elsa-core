@@ -6,9 +6,9 @@
     <PropertyGroup>
         <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
         <OpenApiGenerateDocumentsOnBuild>false</OpenApiGenerateDocumentsOnBuild>
-        <PackageId>WelcomeStation.Elsa.Server.Api</PackageId>
+        <PackageId>Elsa.Abp.Server.Api</PackageId>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Version>2.15.2</Version>
+        <Version>2.15.0</Version>
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0'">

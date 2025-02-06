@@ -6,7 +6,7 @@
     <PropertyGroup>
         <TargetFrameworks>net8.0;net9.0</TargetFrameworks> 
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <PackageId>WelcomeStation.Elsa.Persistence.EntityFramework.SqlServer</PackageId>
+        <PackageId>Elsa.Abp.Persistence.EntityFramework.SqlServer</PackageId>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Version>2.15.0</Version>
     </PropertyGroup>
